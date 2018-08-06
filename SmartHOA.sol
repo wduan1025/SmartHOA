@@ -1,5 +1,17 @@
 pragma solidity ^0.4.17;
 
+contract HOAFactory{
+    address[] public deployedHOAs;
+    
+    function createHOA(uint lower, uint upper) public{
+        address currentAddress = new HOA(lower, upper, msg.sender);
+        deployedHOAs.push(currentAddress);
+    }
+    
+    function getDeployedHOA() public view returns(address[]) {
+        return deployedHOAs;
+    }
+}
 contract HOA{
     struct Request{
         string description;
@@ -21,8 +33,8 @@ contract HOA{
         _;
     }
     
-    function HOA(uint lower, uint upper) public{
-        manager = msg.sender;
+    function HOA(uint lower, uint upper, address creator) public{
+        manager = creator;
         minContribution = lower;
         maxContribution = upper;
     }
