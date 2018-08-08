@@ -4,7 +4,7 @@
   "description": "decentralized HOA smart contract",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,11 @@
     "fs-extra": "^7.0.0",
     "ganache-cli": "^6.1.6",
     "mocha": "^5.2.0",
+    "next": "^4.1.4",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "solc": "^0.4.24",
+    "truffle-hdwallet-provider": "0.0.6",
     "web3": "^1.0.0-beta.26"
   }
 }
