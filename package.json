@@ -1,0 +1,26 @@
+{
+  "name": "smart-hoa",
+  "version": "1.0.0",
+  "description": "decentralized HOA smart contract",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wduan1025/smart-hoa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wduan1025/smart-hoa/issues"
+  },
+  "homepage": "https://github.com/wduan1025/smart-hoa#readme",
+  "dependencies": {
+    "fs-extra": "^7.0.0",
+    "ganache-cli": "^6.1.6",
+    "mocha": "^5.2.0",
+    "solc": "^0.4.24",
+    "web3": "^1.0.0-beta.26"
+  }
+}
