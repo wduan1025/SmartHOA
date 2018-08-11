@@ -15,6 +15,7 @@ contract HOAFactory{
 contract HOA{
     struct Request{
         string description;
+        
         uint value;
         address recipient;
         bool complete;
