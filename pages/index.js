@@ -16,9 +16,12 @@ class HOAIndex extends Component {
                 id:id,
                 title: address,
                 description: (
-                    <Link route={`/hoa/${address}`}>
-                        <a>View Detail</a>
-                    </Link>
+                    <div>
+                        <p>{this.props["hoas"][id]}</p>
+                        <Link route={`/hoa/${address}`}>
+                            <a>View Detail</a>
+                        </Link>
+                    </div>
                 ),
                 address: address,
                 fluid: true
@@ -31,7 +34,6 @@ class HOAIndex extends Component {
         <Layout>
             <div>
                 <h3>Open HOAs</h3>
-                {this.renderHOAs()}
                 <Link route="hoa/new">
                     <a>
                         <Button 
@@ -42,6 +44,7 @@ class HOAIndex extends Component {
                         </Button>
                     </a>
                 </Link>
+                {this.renderHOAs()}
             </div>
         </Layout>
         );
