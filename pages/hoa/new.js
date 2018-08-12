@@ -10,7 +10,8 @@ class HoaNew extends Component {
     state = {
         minimumContribution: "",
         errorMessage: "",
-        loading: false
+        loading: false,
+        hoaName: ""
     }
 
     onSubmit = async (event)=>{
@@ -20,9 +21,13 @@ class HoaNew extends Component {
             let minimum;
             minimum = parseFloat(this.state.minimumContribution);
             const accounts = await web3.eth.getAccounts();
+            if(accounts.length === 0){
+                alert("You have to install Metamask extension for your browser");
+            }
             await factory.methods
                 .createHOA(
-                    minimum
+                    minimum,
+                    this.state.hoaName
                 )
                 .send({
                     from: accounts[0]
@@ -38,6 +43,13 @@ class HoaNew extends Component {
             <Layout>
                 <h1> Create HOA </h1>
                 <Form error = {this.state.errorMessage} onSubmit = {this.onSubmit}>
+                    <Form.Field>
+                        <label> HOA Name </label>
+                        <Input 
+                            value={this.state.hoaName}
+                            onChange={event=>
+                                this.setState({hoaName: event.target.value})}/>
+                    </Form.Field>
                     <Form.Field>
                         <label> Minimum Contribution </label>
                         <Input 

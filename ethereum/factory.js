@@ -3,7 +3,7 @@ import HOAFactory from "./build/HOAFactory.json";
 
 const instance = new web3.eth.Contract(
     JSON.parse(HOAFactory.interface),
-    "0xD7a0AB74795EAA55B123C1658c7433AC0658AdA4"
+    "0xF3400DE141A07d729C7ceAF26925B9BDE619210e"
 );
 
 export default instance;

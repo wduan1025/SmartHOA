@@ -18,7 +18,8 @@ class HoaShow extends Component {
             balance:summary[1],
             requestsCount:summary[2],
             approversCount:summary[3],
-            manager:summary[4]
+            manager:summary[4],
+            hoaName: summary[5]
         };
     }
     renderCards() {
@@ -27,14 +28,21 @@ class HoaShow extends Component {
             manager,
             minimumContribution,
             requestsCount,
-            approversCount
+            approversCount,
+            hoaName
         } = this.props;
 
         const items = [
             {
+                header: hoaName,
+                meta: "Brief Introduction",
+                description: "The main purpose of this HOA",
+                style: {overflowWrap: "break-word"}
+            },
+            {
                 header: manager,
                 meta: "Address of Manager",
-                description: "The manager creates this HOA",
+                description: "The manager who creates this HOA",
                 style: {overflowWrap: "break-word"}
             },
             {
@@ -67,7 +75,7 @@ class HoaShow extends Component {
     render (){
     return (
             <Layout>
-                <h3> HOA Show</h3>
+                <h3> HOA Detail</h3>
                 <Grid>
                     <Grid.Row>
                         <Grid.Column width={10}>

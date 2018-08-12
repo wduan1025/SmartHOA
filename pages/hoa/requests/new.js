@@ -31,8 +31,9 @@ class RequestNew extends Component {
     this.setState({ loading: true, errorMessage: '' });
 
     try {
-      console.log("recipient: ", recipient);
-      console.log("sender: ", accounts[0]);
+      if(accounts.length === 0){
+        alert("You have to install Metamask extension for your browser");
+      }
       await hoa.methods
         .createRequest(description, web3.utils.toWei(value, 'ether'), recipient)
         .send({ from: accounts[0] });

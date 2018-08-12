@@ -3,8 +3,8 @@ pragma solidity ^0.4.17;
 contract HOAFactory{
     address[] public deployedHOAs;
     
-    function createHOA(uint lower) public{
-        address currentAddress = new HOA(lower, msg.sender);
+    function createHOA(uint lower, string title) public{
+        address currentAddress = new HOA(lower, msg.sender, title);
         deployedHOAs.push(currentAddress);
     }
     
@@ -27,15 +27,17 @@ contract HOA{
     Request[] public requests;
     mapping(address => bool) public approvers;
     uint public approversCount;
+    string public hoaName;
     
     modifier restricted(){
         require(msg.sender == manager);
         _;
     }
     
-    function HOA(uint lower, address creator) public{
+    function HOA(uint lower, address creator, string title) public{
         manager = creator;
         minContribution = lower;
+        hoaName = title;
     }
     
     function contribute() public payable{
@@ -72,13 +74,14 @@ contract HOA{
     }
 
     function getSummary() public view returns (
-        uint, uint ,uint, uint, address) {
+        uint, uint ,uint, uint, address, string) {
         return (
             minContribution,
             this.balance,
             requests.length,
             approversCount,
-            manager
+            manager,
+            hoaName
         );
     }
     function getRequestCount() public view returns (uint) {
