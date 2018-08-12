@@ -33,7 +33,7 @@ class HoaShow extends Component {
                     fontWeight: "normal",
                     marginBottom: 0,
                     marginTop: "3em",
-                }}>{"Your Smart Home Owner Associate"}
+                }}>{"Your Smart Homeowner Association"}
                 </h1>
                 <h3 style={{
                     fontSize: featuresFontSize,
