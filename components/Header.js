@@ -12,9 +12,6 @@ export default () => {
                 <Link route="/">
                     <a className="item"> Find </a>
                 </Link>
-                <Link route="/hoa/new">
-                    <a className="item"> + </a>
-                </Link>
             </Menu.Menu>
         </Menu>
     );
