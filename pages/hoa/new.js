@@ -32,7 +32,7 @@ class HoaNew extends Component {
                 .send({
                     from: accounts[0]
                 });
-            Router.pushRoute("/");
+            Router.pushRoute("/hoas");
         } catch(err) {
             this.setState({errorMessage: err.message});
         }

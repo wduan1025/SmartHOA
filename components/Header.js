@@ -9,7 +9,7 @@ export default () => {
                 <a className="item"> Smart HOA </a>
             </Link>
             <Menu.Menu position="right">
-                <Link route="/">
+                <Link route="/hoas">
                     <a className="item"> Find </a>
                 </Link>
             </Menu.Menu>

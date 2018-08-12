@@ -37,7 +37,9 @@ class RequestIndex extends Component{
         const {Header, HeaderCell, Row, Body} = Table;
         return (
             <Layout>
-                <h1> request index</h1>
+                <h1> All Requests of this HOA</h1>
+                <h3> The approval and finalization status of all spending
+                    requests published by the manager of this HOA</h3>
                 <Link route={`/hoa/${this.props.address}/requests/new`}>
                     <a>
                         <Button 
