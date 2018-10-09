@@ -3,7 +3,7 @@ const Web3 = require("web3");
 const compiledFactory = require("./build/HOAFactory.json");
 
 const mnemonic = process.env.MNEMONIC;
-const infura = "https://rinkeby.infura.io/IM8GjYmXlQZCY3LMWaqm";
+const infura = process.env.INFURA;
 
 const provider = new HDWalletProvider(
     mnemonic,
