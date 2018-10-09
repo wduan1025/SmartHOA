@@ -2,7 +2,7 @@ const HDWalletProvider = require("truffle-hdwallet-provider");
 const Web3 = require("web3");
 const compiledFactory = require("./build/HOAFactory.json");
 
-const mnemonic = "yellow stool wagon cage gate mixed fiction pumpkin runway like velvet planet";
+const mnemonic = process.env.MNEMONIC;
 const infura = "https://rinkeby.infura.io/IM8GjYmXlQZCY3LMWaqm";
 
 const provider = new HDWalletProvider(
